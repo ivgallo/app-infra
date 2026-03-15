@@ -1,0 +1,23 @@
+name: contact-service
+namespace: dev
+
+image:
+  registry: localhost:5000
+  repository: contact-service
+  tag: latest
+
+replicas: 2
+
+service:
+  type: NodePort
+  nodePort: 30080
+
+springProfile: dev
+
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "200m"
+  limits:
+    memory: "512Mi"
+    cpu: "500m"

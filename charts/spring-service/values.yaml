@@ -1,0 +1,43 @@
+# ─── Service identification ───
+name: ""
+namespace: default
+
+# ─── Docker image ───
+image:
+  registry: localhost:5000
+  repository: ""
+  tag: latest
+
+# ─── Replicas and resources ───
+replicas: 1
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "200m"
+  limits:
+    memory: "512Mi"
+    cpu: "500m"
+
+# ─── Networking ───
+port: 8080
+service:
+  type: ClusterIP
+  nodePort: null
+
+# ─── Spring Boot ───
+springProfile: default
+
+# ─── Health checks ───
+health:
+  path: /actuator/health
+  initialDelay: 30
+  period: 10
+
+# ─── Additional environment variables ───
+env: {}
+
+# ─── ConfigMap data ───
+config: {}
+
+# ─── Secrets ───
+secrets: {}
