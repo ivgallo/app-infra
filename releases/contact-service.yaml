@@ -21,3 +21,8 @@ resources:
   limits:
     memory: "512Mi"
     cpu: "500m"
+
+health:
+  path: /monitoring/health
+  initialDelay: 35
+  period: 10
